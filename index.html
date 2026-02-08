@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nuestra cita 💙</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top, #1b2735, #090a0f);
+  color: #eaeaea;
+  overflow: hidden;
+}
+
+.container {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 18px;
+  max-width: 420px;
+  padding: 20px;
+  animation: fade 0.6s ease;
+}
+
+.container.active {
+  display: flex;
+}
+
+.tenor-gif-embed {
+  max-width: 220px;
+}
+
+h1 {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+p {
+  font-size: 1rem;
+  opacity: 0.9;
+  line-height: 1.4;
+}
+
+.btn {
+  display: flex;
+  gap: 18px;
+  margin-top: 10px;
+  position: relative;
+}
+
+.btn a {
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  padding: 12px 26px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  cursor: pointer;
+}
+
+.btn a:active {
+  transform: scale(0.96);
+}
+
+.reject {
+  background: rgba(255, 80, 80, 0.15);
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ESCENA 1 -->
+<div class="container active" id="scene-1">
+  <div class="tenor-gif-embed" data-postid="2871482820979272488"></div>
+  <h1>Hey tú… 💙</h1>
+  <p>
+    Hoy no es un día cualquiera.<br>
+    Quiero proponerte algo especial…<br>
+    ¿aceptas?
+  </p>
+  <div class="btn">
+    <a onclick="goTo(2)">Síii💙</a>
+    <a class="reject escape">Nosé…</a>
+  </div>
+</div>
+
+<!-- ESCENA 2 -->
+<div class="container" id="scene-2">
+  <div class="tenor-gif-embed" data-postid="11000679121036284802"></div>
+  <h1>Primera regla</h1>
+  <p>
+    No preguntes a dónde vamos.<br>
+    Solo confía en mí.
+  </p>
+  <div class="btn">
+    <a onclick="goTo(3)">Confío 💙</a>
+    <a class="reject escape">No confío</a>
+  </div>
+</div>
+
+<!-- ESCENA 3 -->
+<div class="container" id="scene-3">
+  <div class="tenor-gif-embed" data-postid="21443416"></div>
+  <h1>Cómo debes ir…</h1>
+  <p>
+    Algo cómodo.<br>
+    Algo lindo.<br>
+    Algo que solo yo pueda admirar.
+  </p>
+  <div class="btn">
+    <a onclick="goTo(4)">Anotado💙</a>
+    <a class="reject escape">No quiero</a>
+  </div>
+</div>
+
+<!-- ESCENA 4 -->
+<div class="container" id="scene-4">
+  <div class="tenor-gif-embed" data-postid="18148463711766725559"></div>
+  <h1>Detalles importantes</h1>
+  <p>
+    • Rojo, naranja, negro, amarillo y café<br>
+    • Zapatos altos y cómodos<br>
+    • Bloqueador o gorra ☀️<br>
+    • Algo cómodo para la noche 😏<br>
+    • Cepillo....te quedas conmigo 😉<br>
+    • Y ganas de no irte de mi lado..
+  </p>
+  <div class="btn">
+    <a onclick="goTo(5)">Quiero estar contigo💙</a>
+    <a class="reject escape">Paso…</a>
+  </div>
+</div>
+
+<!-- ESCENA 5 -->
+<div class="container" id="scene-5">
+  <div class="tenor-gif-embed" data-postid="2871482820979272488"></div>
+  <h1>Horario</h1>
+  <p>
+    12:30 AM.<br>
+    Te veré primero.<br>
+    Esperaremos juntos.<br>
+    Luego te llevaré sin decirte nada.<br><br>
+    Confía....
+  </p>
+  <div class="btn">
+    <a onclick="goTo(6)">Me gusta💙</a>
+    <a class="reject escape">Me asusta</a>
+  </div>
+</div>
+
+<!-- ESCENA 6 -->
+<div class="container" id="scene-6">
+  <div class="tenor-gif-embed" data-postid="21443416"></div>
+  <h1>Última pregunta…</h1>
+  <p>¿Aceptas vivir esta cita conmigo?</p>
+  <div class="btn">
+    <a onclick="goTo(7)">SÍ 💖</a>
+    <a class="reject escape">NO 😈</a>
+  </div>
+</div>
+
+<!-- FINAL -->
+<div class="container" id="scene-7">
+  <div class="tenor-gif-embed" data-postid="11000679121036284802"></div>
+  <h1>Lo sabía…</h1>
+  <p>
+    Prepárate.<br>
+    Ese día solo seremos solo tu y yo…<br>
+    Mi amor 😘
+  </p>
+</div>
+
+<script src="https://tenor.com/embed.js"></script>
+
+<script>
+function goTo(n) {
+  document.querySelectorAll('.container').forEach(c => c.classList.remove('active'));
+  document.getElementById(`scene-${n}`).classList.add('active');
+}
+
+// TODOS los botones que escapan
+document.querySelectorAll('.escape').forEach(btn => {
+  btn.addEventListener('touchstart', mover);
+  btn.addEventListener('mouseenter', mover);
+});
+
+function mover(e) {
+  const btn = e.target;
+  btn.style.position = "absolute";
+  btn.style.top = Math.random() * 80 + "%";
+  btn.style.left = Math.random() * 80 + "%";
+}
+</script>
+
+</body>
+</html>
